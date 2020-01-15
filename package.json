@@ -1,0 +1,26 @@
+{
+  "name": "garden",
+  "version": "1.0.0",
+  "description": "hatshepsut garden",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sharkoman/hatshepsut-garden.git"
+  },
+  "keywords": [
+    "garden",
+    "javascript"
+  ],
+  "author": "sherif hakam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sharkoman/hatshepsut-garden/issues"
+  },
+  "homepage": "https://github.com/sharkoman/hatshepsut-garden#readme",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}

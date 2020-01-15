@@ -1,0 +1,102 @@
+body {
+    background: lightyellow;
+    font-family: sans-serif;
+    padding: 30px;
+}
+
+.main-header {
+    text-align: center;
+}
+
+.main-header img {
+    width: 100px;
+}
+
+pre {
+    margin: 0;
+    padding: 0;
+}
+
+label {
+    font-size: 14px;
+    display: inline-block;
+    padding: 0 0.3em 0 1em;
+}
+
+input {
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+button {
+    -webkit-appearance: none;
+    border: none;
+    color: white;
+    background-color: maroon;
+    padding: 5px 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.35s;
+}
+
+button:hover {
+    background-color: #b72020;
+}
+
+form {
+    display: block;
+    padding: 1em;
+    background: wheat;
+    border-radius: 10px;
+}
+
+#garden-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+#garden {
+    background: lightgreen;
+    padding: 2em 1em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+    color: darkgreen;
+    font-weight: bolder;
+}
+
+#result {
+    text-align: center;
+}
+
+.alert {
+    padding: 0.5em;
+    border-radius: 3px;
+    background: orange;
+}
+
+.hide {
+    display: none;
+}
+
+.main-footer,
+.main-footer ul {
+    display: flex;
+    align-items: center;
+}
+
+.main-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-inline-start: 1em;
+}
+
+.main-footer ul li {
+    margin-inline-end: 1em;
+}
+
+.main-footer img {
+    width: 20px;
+}
