@@ -27,27 +27,86 @@ function shapesStartEndIndex(height, padding, totalShapesNumber) {
 	return shapesPacingInfo;
 }
 
-/*
- Print result by append it with <pre> tag to result html tag
+/* 
+	That will return new row array indented by the shape indent level 
 */
-function printResultsOnScreen(pixelArray, showNumbers = false, target = '#result') {
-	const preElement = document.querySelector(target);
-	let result = '';
-	preElement.innerHTML = '';
+function addRow(width, padding, indentLevel, fill) {
+	const halfPaddingNum = padding / 2;
 
-	pixelArray.forEach(row => {
-		let line;
-		if (!showNumbers) {
-			const translatedLine = row.map(n => pixelEnum[n]);
-			line = translatedLine.join('');
+	// create the line start/end white padding...
+	const paddingSpace = [];
+	for (let i = 0; i < halfPaddingNum; i++) {
+		paddingSpace.push(0);
+	}
+
+	const capPaddingStart = [2, ...paddingSpace];
+	const capPaddingEnd = [...paddingSpace, 2];
+	const widthWithoutCaps = width - (2 + (padding / 2 + 1) * 2 * indentLevel);
+
+	const capPaddingStartRepeated = [];
+	const capPaddingEndRepeated = [];
+	for (let i = 0; i < indentLevel; i++) {
+		capPaddingStartRepeated.push(...capPaddingStart);
+		capPaddingEndRepeated.push(...capPaddingEnd);
+	}
+
+	const capDashedLine = [];
+	for (let i = 0; i < widthWithoutCaps; i++) {
+		capDashedLine.push(fill);
+	}
+
+	return [...capPaddingStartRepeated, 2, ...capDashedLine, 2, ...capPaddingEndRepeated];
+}
+
+function createNewBox(pixelArray, width, padding, shapeLevel, startIndex, endIndex) {
+	for (let i = startIndex; i <= endIndex; i++) {
+		if (i !== startIndex && i !== endIndex) {
+			pixelArray[i] = addRow(width, padding, shapeLevel, 0);
 		} else {
-			line = row.join('');
+			pixelArray[i] = addRow(width, padding, shapeLevel, 1);
 		}
-		line = line + '\n';
-		result += line;
+	}
+}
+
+function draw(width = 6, height = 6, padding = 4) {
+	const pixelArray = [];
+	const totalShapes = numberOfTotalShapes(height, padding);
+	const shapesIndexs = shapesStartEndIndex(height, padding, totalShapes);
+	// console.log('box', width, height, padding, shapesIndexs);
+
+	shapesIndexs.forEach(el => {
+		createNewBox(pixelArray, width, padding, el.indent, el.start, el.end);
 	});
 
-	preElement.innerHTML += `<pre>` + result + `</pre>`;
+	return pixelArray;
+}
+
+
+/*
+	Calculate number of total shapes.
+	Minus the (padding value + first & end lines) from the [ Total Shape Height ] till it reach 2 lines at least.
+		That easely give us the total count of shapes that we can include inside the shape
+*/
+function numberOfTotalShapes(height, padding) {
+	let count = 0;
+	for (let i = height; i >= 2; i = i - (padding + 2)) {
+		count++;
+	}
+	return count;
+}
+
+/*
+	Getting the index of first & last line of every shap with shape index :)
+*/
+function shapesStartEndIndex(height, padding, totalShapesNumber) {
+	const shapesPacingInfo = [];
+	for (let i = 0; i < totalShapesNumber; i++) {
+		const paddingValue = (padding / 2 + (i === 0 ? 0 : 1)) * i;
+		const start = paddingValue;
+		const end = height - paddingValue - 1;
+		shapesPacingInfo.push({ start, end, indent: i });
+	}
+	return shapesPacingInfo;
 }
 
 /* 
@@ -95,13 +154,35 @@ function draw(width = 6, height = 6, padding = 4) {
 	const pixelArray = [];
 	const totalShapes = numberOfTotalShapes(height, padding);
 	const shapesIndexs = shapesStartEndIndex(height, padding, totalShapes);
-	console.log('box', width, height, padding, shapesIndexs);
+	// console.log('box', width, height, padding, shapesIndexs);
 
 	shapesIndexs.forEach(el => {
 		createNewBox(pixelArray, width, padding, el.indent, el.start, el.end);
 	});
 
 	return pixelArray;
+}
+/*
+ Print result by append it with <pre> tag to result html tag
+*/
+function printResultsOnScreen(pixelArray, showNumbers = false, target = '#result') {
+	const preElement = document.querySelector(target);
+	let result = '';
+	preElement.innerHTML = '';
+
+	pixelArray.forEach(row => {
+		let line;
+		if (!showNumbers) {
+			const translatedLine = row.map(n => pixelEnum[n]);
+			line = translatedLine.join('');
+		} else {
+			line = row.join('');
+		}
+		line = line + '\n';
+		result += line;
+	});
+
+	preElement.innerHTML += `<pre>` + result + `</pre>`;
 }
 
 function showErrorMessage(selector, hideError) {
@@ -141,13 +222,13 @@ function isFormValid(width, height, padding) {
 function listenToFormSubmit() {
 	document.querySelector('#garden-controls').addEventListener('submit', function(e) {
 		// stop redirect behavior;
-        e.preventDefault();
-        
+		e.preventDefault();
+
 		// collect form data as numbers;
 		const width = +document.querySelector('#width').value;
 		const height = +document.querySelector('#height').value;
-        const padding = +document.querySelector('#padding').value;
-        
+		const padding = +document.querySelector('#padding').value;
+
 		if (isFormValid(width, height, padding)) {
 			const pixelArray = draw(width, height, padding);
 			printResultsOnScreen(pixelArray, false);
@@ -157,5 +238,3 @@ function listenToFormSubmit() {
 }
 
 listenToFormSubmit();
-
-module.exports = draw;
