@@ -24,7 +24,7 @@ That will read the test json file.
 
 ```1. (Width: 20, Height:40, padding: 6)```
 <br>
-<img src="https://raw.githubusercontent.com/sharkoman/hatshepsut-garden/master/images/snapshot-20-40-6.png?token=ABN52Y4UDWGXKALVIR7ZMVS6EBE6C" width="400">
+<img src="https://raw.githubusercontent.com/sharkoman/hatshepsut-garden/master/images/snapshot-20-40-6.png?token=ABN52Y6V6SJ6KTN2POUJENK6EBF5M" width="400">
 <br>
 
 ```2. (Width: 60, Height:60, padding: 10)```
