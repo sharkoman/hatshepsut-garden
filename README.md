@@ -20,6 +20,9 @@ npm run test
 ```
 That will read the test json file.
 
+## Big O
+Method ```draw()``` Big O calculation is ```O(a * b)```;
+
 ## Screen Shots
 
 ```1. (Width: 20, Height:40, padding: 6)```
