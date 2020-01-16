@@ -1,8 +1,18 @@
+
 [![Build Status](https://travis-ci.com/sharkoman/hatshepsut-garden.svg?token=ZxkkJ62pswYi4UusUhsp&branch=master)](https://travis-ci.com/sharkoman/hatshepsut-garden)
 <br>
 
-# Hatshepsut Garden
-As an Egyption this was a great honor and kinda fun to help our queen Hatshepsut build her great garden.
+<p align="center">
+  <img src="https://i.imgur.com/VIodaod.png" width="200" />
+</p>
+
+<h1 align="center">
+  Hatshepsut Garden
+</h1>
+
+<p align="center">As an Egyption this was a great honor and kinda fun to help our queen Hatshepsut build her great garden.</p>
+
+<br>
 
 ## Installation
 
