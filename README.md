@@ -2,7 +2,7 @@
 <br>
 
 # Hatshepsut Garden
-As an Egyption this was a great honor and kinda fun to help our queen build her great garden.
+As an Egyption this was a great honor and kinda fun to help our queen Hatshepsut build her great garden.
 
 ## Installation
 
