@@ -27,20 +27,20 @@ Method ```draw()``` Big O calculation is ```O(a * b)```;
 
 ```1. (Width: 20, Height:40, padding: 6)```
 <br>
-<img src="https://raw.githubusercontent.com/sharkoman/hatshepsut-garden/master/images/snapshot-20-40-6.png?token=ABN52Y6V6SJ6KTN2POUJENK6EBF5M" width="400">
+<img src="https://i.imgur.com/6gz6aGZ.png" width="400">
 <br>
 
 ```2. (Width: 60, Height:60, padding: 10)```
 <br>
-<img src="https://raw.githubusercontent.com/sharkoman/hatshepsut-garden/master/images/snapshot-60-60-10.png?token=ABN52YYHUZEX6JLVH4ZXDFK6EBFQ4" width="400">
+<img src="https://i.imgur.com/7GZtVSz.png" width="400">
 <br>
 
 ```3. (Width: 80, Height:20, padding: 16)```
 <br>
-<img src="https://raw.githubusercontent.com/sharkoman/hatshepsut-garden/master/images/snapshot-80-20-16.png?token=ABN52Y555BTKOPG6CAGQEIS6EBFUW" width="400">
+<img src="https://i.imgur.com/c9Oy7m9.png" width="400">
 <br>
 
 ```4. (Width: 80, Height:100, padding: 20)```
 <br>
-<img src="https://raw.githubusercontent.com/sharkoman/hatshepsut-garden/master/images/snapshot-80-100-20.png?token=ABN52YYU2S2KEMKOMNCCR2K6EBFXE" width="400">
+<img src="https://i.imgur.com/OySyHXi.png" width="400">
 <br>
