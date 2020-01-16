@@ -1,2 +1,2 @@
-# hatshepsut-garden
+# Hatshepsut Garden
 Hatshepsut Garden
