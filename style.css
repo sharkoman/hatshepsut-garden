@@ -17,6 +17,11 @@ pre {
     padding: 0;
 }
 
+p {
+    margin: 0;
+    margin-bottom: 1em;
+}
+
 label {
     font-size: 14px;
     display: inline-block;
@@ -46,6 +51,7 @@ button:hover {
 
 form {
     display: block;
+    margin-bottom: 1em;
     padding: 1em;
     background: wheat;
     border-radius: 10px;
@@ -53,8 +59,9 @@ form {
 
 #garden-controls {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-bottom: 1em;
+    align-items: center;
 }
 
 #garden {
@@ -73,7 +80,7 @@ form {
 .alert {
     padding: 0.5em;
     border-radius: 3px;
-    background: orange;
+    background: gold;
 }
 
 .hide {
