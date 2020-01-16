@@ -1,5 +1,6 @@
 
 [![Build Status](https://travis-ci.com/sharkoman/hatshepsut-garden.svg?token=ZxkkJ62pswYi4UusUhsp&branch=master)](https://travis-ci.com/sharkoman/hatshepsut-garden)
+![GitHub issues](https://img.shields.io/github/issues/sharkoman/hatshepsut-garden)
 <br>
 
 <p align="center">
