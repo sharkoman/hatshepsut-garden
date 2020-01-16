@@ -81,6 +81,8 @@ function draw(width = 6, height = 6, padding = 4) {
 
 	return pixelArray;
 }
+
+
 /*
  Print result by append it with <pre> tag to result html tag
 */

@@ -1,4 +1,4 @@
-const draw = require('./draw');
+const {draw} = require('./draw');
 const testData = require('./test_data.json');
 
 describe('test garden pixel_array', function() {
@@ -12,17 +12,3 @@ describe('test garden pixel_array', function() {
 		});
 	});
 });
-
-// test('test garden pixel_array', () => {
-//     // const paramsArray = testData[0].input.split(',');
-//     // const pixelArray = draw(+paramsArray[0], +paramsArray[1], +paramsArray[2]);
-//     // const parsed = JSON.stringify(pixelArray);
-//     // expect(parsed).toEqual(testData[0].pixelArrayJson);
-
-//     testData.forEach(test => {
-//         const paramsArray = test.input.split(',');
-//         const pixelArray = draw(+paramsArray[0], +paramsArray[1], +paramsArray[2]);
-//         const parsed = JSON.stringify(pixelArray);
-//         expect(parsed).toEqual(test.pixelArrayJson);
-//     });
-// });

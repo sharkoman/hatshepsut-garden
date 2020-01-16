@@ -1,13 +1,6 @@
-
-
-/*
-	Calculate number of total shapes.
-	Minus the (padding value + first & end lines) from the [ Total Shape Height ] till it reach 2 lines at least.
-		That easely give us the total count of shapes that we can include inside the shape
-*/
-function numberOfTotalShapes(height, padding) {
+function numberOfTotalShapes(width, padding) {
 	let count = 0;
-	for (let i = height; i >= 2; i = i - (padding + 2)) {
+	for (let i = width; i >= 2; i = i - (padding + 2)) {
 		count++;
 	}
 	return count;
@@ -68,11 +61,10 @@ function createNewBox(pixelArray, width, padding, shapeLevel, startIndex, endInd
 	}
 }
 
-function draw(width = 6, height = 6, padding = 4) {
+function draw(width, height, padding) {
 	const pixelArray = [];
-	const totalShapes = numberOfTotalShapes(height, padding);
+	const totalShapes = numberOfTotalShapes(width, padding);
 	const shapesIndexs = shapesStartEndIndex(height, padding, totalShapes);
-	// console.log('box', width, height, padding, shapesIndexs);
 
 	shapesIndexs.forEach(el => {
 		createNewBox(pixelArray, width, padding, el.indent, el.start, el.end);
@@ -81,4 +73,4 @@ function draw(width = 6, height = 6, padding = 4) {
 	return pixelArray;
 }
 
-module.exports = draw;
+exports.draw = draw;
